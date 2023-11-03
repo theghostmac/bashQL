@@ -1,5 +1,10 @@
 import "./stock_data.dart";
+import "package:json_annotation/json_annotation.dart";
+import "dart:convert";
 
+part "stock.g.dart";
+
+@JsonSerializable()
 class Stock {
   final int stockId;
   final String stockName;
