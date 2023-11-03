@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
+import "forex.dart";
 
 void main() {
-  runApp(MaterialApp(forexQL()));
+  runApp(MaterialApp(home: Forex()));
 }
