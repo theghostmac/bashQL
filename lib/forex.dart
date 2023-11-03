@@ -29,7 +29,7 @@ class Forex extends StatelessWidget {
     return ListTile(
       leading: handleStockImageData(stock[index]),
       title: Text(stock[index].stockName),
-      subtitle:Text("current stock price: ${stock[index].stockPrice}"),
+      subtitle: Text("current stock price: ${stock[index].stockPrice}"),
       onTap: () => {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ForexDetail(stock[index])))

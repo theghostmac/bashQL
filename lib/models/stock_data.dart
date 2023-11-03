@@ -8,7 +8,8 @@ class StockData {
   final String feedData;
   final String strategy;
   final String stockQuant;
-  StockData(this.feedData, this.strategy, this.stockQuant);
+  final String description;
+  StockData(this.feedData, this.strategy, this.stockQuant, this.description);
 
   factory StockData.fromJson(Map<String, dynamic> json) =>
       _$StockDataFromJson(json);
