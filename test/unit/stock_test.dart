@@ -9,6 +9,7 @@ void main() {
     expect(stocks, isNotNull);
     expect(stocks[0].stockName, equals("appl"));
     expect(stocks[0].stockId, isNonNegative);
+    
   });
 
   test("test that stock data not available is not returned", () {

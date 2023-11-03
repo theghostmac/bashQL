@@ -9,7 +9,7 @@ class MockStock {
       23.0,
       21.0,
       18.0,
-      "https://cdn-icons-png.flaticon.com/512/0/747.png",
+      "https://images.pexels.com/photos/10678683/pexels-photo-10678683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       [StockData("random feed", "day trade", "jim")],
     ),
     Stock(
@@ -18,7 +18,7 @@ class MockStock {
       45.0,
       41.0,
       28.0,
-      "https://icon-library.com/images/google-icon-logo/google-icon-logo-14.jpg",
+      "https://images.pexels.com/photos/10678683/pexels-photo-10678683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
       [StockData("random feed", "day trade", "tutu")],
     )
   ];

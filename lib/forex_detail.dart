@@ -8,11 +8,36 @@ class ForexDetail extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text("Stock detail")),
-      body: const Column(
+      body: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [],
+        children: [
+          Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: stockDetail())
+        ],
       ),
     );
+  }
+
+  List<Widget> stockDetail() {
+    return [
+      Image.network(
+        stock.assetIcon,
+        fit: BoxFit.fitWidth,
+      ),
+      Text(
+        stock.stockName,
+        textAlign: TextAlign.left,
+        style: const TextStyle(
+            fontSize: 32,
+            fontWeight: FontWeight.bold,
+            color: Colors.deepPurple),
+      ),
+      Text(
+        "${stock.stockStartingDayPrice}",
+        textAlign: TextAlign.left,
+      ),
+    ];
   }
 }

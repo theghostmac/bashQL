@@ -29,7 +29,7 @@ class Forex extends StatelessWidget {
     return ListTile(
       leading: handleStockImageData(stock[index]),
       title: Text(stock[index].stockName),
-      subtitle: stockTileMultipleData(stock, index),
+      subtitle:Text("current stock price: ${stock[index].stockPrice}"),
       onTap: () => {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ForexDetail(stock[index])))
@@ -50,7 +50,7 @@ class Forex extends StatelessWidget {
   Widget stockTileMultipleData(List<Stock> stock, int index) {
     return Column(
       children: [
-        Text("${stock[index].stockPrice}"),
+        Text("current stock price: ${stock[index].stockPrice}"),
         Text("${stock[index].stockStartingDayPrice}"),
         Text("${stock[index].stockEndingDayPrice}")
       ],
