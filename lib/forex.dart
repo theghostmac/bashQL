@@ -18,16 +18,26 @@ class Forex extends StatelessWidget {
       body: ListView.builder(
           itemCount: stock.length,
           itemBuilder: (context, index) {
-            return stockTileData(stock, index);
+            return stockPreferredTileData(stock, index);
           }),
     );
   }
 
-  Widget stockTileData(List<Stock> stock, int index) {
+  Widget stockPreferredTileData(List<Stock> stock, int index) {
     return ListTile(
-      leading: Image.asset("demo.png"),
+      leading: handleStockImageData(stock[index]),
       title: Text(stock[index].stockName),
       subtitle: stockTileMultipleData(stock, index),
+    );
+  }
+
+  Widget handleStockImageData(Stock stock) {
+    return Container(
+      constraints: const BoxConstraints.tightFor(width: 150.0),
+      child: Image.network(
+        stock.assetIcon,
+        fit: BoxFit.fitWidth,
+      ),
     );
   }
 
