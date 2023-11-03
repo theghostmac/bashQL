@@ -1,3 +1,5 @@
+import "dart:math";
+
 import "package:test/test.dart";
 import "package:forexql/mocks/mock_stock.dart";
 
@@ -13,5 +15,11 @@ void main() {
     final stocks = MockStock.fetchAllStocks();
     expect(stocks[2], isNull);
     expect(stocks[2].stockId, isZero);
+  });
+
+  test("single stock data returned is valid", () {
+    final singleMockData = MockStock.fetchSingleStock(0);
+    expect(singleMockData.stockId, equals(1));
+    expect(singleMockData.stockName, equals("aapl"));
   });
 }
