@@ -21,4 +21,6 @@ class Stock {
       this.stockEndingDayPrice,
       this.assetIcon,
       this.strategies);
+
+  factory Stock.fromJson(Map<String, dynamic> json) => _$StockFromJson(json);
 }

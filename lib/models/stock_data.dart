@@ -9,4 +9,7 @@ class StockData {
   final String strategy;
   final String stockQuant;
   StockData(this.feedData, this.strategy, this.stockQuant);
+
+  factory StockData.fromJson(Map<String, dynamic> json) =>
+      _$StockDataFromJson(json);
 }
