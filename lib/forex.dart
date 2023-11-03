@@ -1,4 +1,5 @@
 import "package:flutter/material.dart";
+import "package:forexql/forex_detail.dart";
 import "./models/stock.dart";
 
 class Forex extends StatelessWidget {
@@ -18,16 +19,21 @@ class Forex extends StatelessWidget {
       body: ListView.builder(
           itemCount: stock.length,
           itemBuilder: (context, index) {
-            return stockPreferredTileData(stock, index);
+            return stockPreferredTileData(context, stock, index);
           }),
     );
   }
 
-  Widget stockPreferredTileData(List<Stock> stock, int index) {
+  Widget stockPreferredTileData(
+      BuildContext context, List<Stock> stock, int index) {
     return ListTile(
       leading: handleStockImageData(stock[index]),
       title: Text(stock[index].stockName),
       subtitle: stockTileMultipleData(stock, index),
+      onTap: () => {
+        Navigator.push(context,
+            MaterialPageRoute(builder: (context) => ForexDetail(stock[index])))
+      },
     );
   }
 
