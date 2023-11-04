@@ -9,7 +9,7 @@ class MockStock {
       23.0,
       21.0,
       18.0,
-      "https://images.pexels.com/photos/10678683/pexels-photo-10678683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=800",
       [
         StockData(23, 14000, "jim",
             "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
@@ -21,7 +21,7 @@ class MockStock {
       45.0,
       41.0,
       28.0,
-      "https://images.pexels.com/photos/10678683/pexels-photo-10678683.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2",
+      "https://images.pexels.com/photos/247676/pexels-photo-247676.jpeg?auto=compress&cs=tinysrgb&w=800",
       [
         StockData(12, 21000, "tutu",
             "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")

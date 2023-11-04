@@ -27,6 +27,10 @@ class ForexDetail extends StatelessWidget {
 
   List<Widget> stockDetail(Stock stock, int index) {
     return [
+      Image.network(
+        stock.assetIcon,
+        fit: BoxFit.fitWidth,
+      ),
       Text(
         stock.stockName,
         textAlign: TextAlign.left,
@@ -40,13 +44,6 @@ class ForexDetail extends StatelessWidget {
         "${stock.stockStartingDayPrice}",
         textAlign: TextAlign.left,
       ),
-      CircleAvatar(
-        radius: 36.0,
-        child: Image.network(
-          stock.assetIcon,
-          fit: BoxFit.fitWidth,
-        ),
-      )
     ];
   }
 
