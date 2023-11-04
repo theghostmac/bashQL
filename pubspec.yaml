@@ -37,6 +37,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   json_annotation: ^4.8.1
   http: ^1.1.0
+  fl_chart: ^0.61.0
+  syncfusion_flutter_charts: ^23.1.43
 
 dev_dependencies:
   test: ^1.5.1

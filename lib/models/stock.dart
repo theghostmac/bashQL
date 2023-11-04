@@ -1,6 +1,12 @@
+import "dart:io";
+
+import "package:forexql/dataclient/endpoint.dart";
+
 import "./stock_data.dart";
 import "package:json_annotation/json_annotation.dart";
 import "dart:convert";
+import "dart:async";
+import "package:http/http.dart" as http;
 
 part "stock.g.dart";
 
@@ -23,4 +29,16 @@ class Stock {
       this.strategies);
 
   factory Stock.fromJson(Map<String, dynamic> json) => _$StockFromJson(json);
+
+  static Future<List<Stock>> fetchStocks() async {
+    var url = Endpoint.uri("/stocks");
+    var resp = await http.get(url.toString() as Uri);
+    if (resp.statusCode != HttpStatus.ok) throw ("bad response code");
+    List<Stock> stocks = [];
+    if (json.decode(resp.body) == null) throw ("empty response");
+    for (var res in json.decode(resp.body)) {
+      stocks.add(Stock.fromJson(res));
+    }
+    return stocks;
+  }
 }

@@ -7,15 +7,15 @@ part of 'stock_data.dart';
 // **************************************************************************
 
 StockData _$StockDataFromJson(Map<String, dynamic> json) => StockData(
-      json['feedData'] as String,
-      json['strategy'] as String,
+      (json['day'] as num).toDouble(),
+      (json['price'] as num).toDouble(),
       json['stockQuant'] as String,
       json['description'] as String,
     );
 
 Map<String, dynamic> _$StockDataToJson(StockData instance) => <String, dynamic>{
-      'feedData': instance.feedData,
-      'strategy': instance.strategy,
+      'day': instance.day,
+      'price': instance.price,
       'stockQuant': instance.stockQuant,
       'description': instance.description,
     };

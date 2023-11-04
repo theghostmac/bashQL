@@ -1,6 +1,8 @@
+import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:forexql/models/stock.dart';
 import 'package:forexql/models/stock_data.dart';
+import 'package:syncfusion_flutter_charts/charts.dart';
 
 class ForexDetail extends StatelessWidget {
   final Stock stock;
@@ -8,25 +10,23 @@ class ForexDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text("Stock detail")),
-      body: Column(
-        mainAxisAlignment: MainAxisAlignment.start,
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: stockDetail(stock, 0))
-        ],
-      ),
-    );
+        appBar: AppBar(title: const Text("Stock detail")),
+        body: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: stockDetail(stock, 0))
+            ],
+          ),
+        ));
   }
 
   List<Widget> stockDetail(Stock stock, int index) {
     return [
-      Image.network(
-        stock.assetIcon,
-        fit: BoxFit.fitWidth,
-      ),
       Text(
         stock.stockName,
         textAlign: TextAlign.left,
@@ -34,16 +34,19 @@ class ForexDetail extends StatelessWidget {
             fontSize: 32,
             fontWeight: FontWeight.bold,
             color: Colors.deepPurple),
-        Text(
-          "${stock.stockStartingDayPrice}",
-          textAlign: TextAlign.left,
-        ),
       ),
       stockDescription(stock.strategies, index),
       Text(
         "${stock.stockStartingDayPrice}",
         textAlign: TextAlign.left,
       ),
+      CircleAvatar(
+        radius: 36.0,
+        child: Image.network(
+          stock.assetIcon,
+          fit: BoxFit.fitWidth,
+        ),
+      )
     ];
   }
 
