@@ -12,7 +12,7 @@ class MockStock {
       "assets/images/apple.png",
       [
         StockData(23, 14000, "jim",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -24,7 +24,7 @@ class MockStock {
       "assets/images/google.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -36,7 +36,7 @@ class MockStock {
       "assets/images/microsoft.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -48,7 +48,7 @@ class MockStock {
       "assets/images/nvidia.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -60,7 +60,7 @@ class MockStock {
       "assets/images/snapchat.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -72,7 +72,7 @@ class MockStock {
       "assets/images/meta.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -84,7 +84,7 @@ class MockStock {
       "assets/images/tesla.webp",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
     Stock(
@@ -96,7 +96,7 @@ class MockStock {
       "assets/images/cnbc.png",
       [
         StockData(12, 21000, "tutu",
-            "During a program on CNBC, Michael Saylor stated that if institutional investors take on a larger role in Bitcoin, the cryptocurrency market will mature and filter out malicious individuals and more speculative cryptocurrency projects.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
       ],
     ),
   ];
