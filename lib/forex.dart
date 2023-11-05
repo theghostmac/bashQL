@@ -1,5 +1,6 @@
 import "package:flutter/material.dart";
 import "package:forexql/forex_detail.dart";
+import "package:forexql/styles/styles.dart";
 import "./models/stock.dart";
 
 class Forex extends StatelessWidget {
@@ -9,18 +10,25 @@ class Forex extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: const Icon(
-          Icons.home,
-          color: Colors.deepPurple,
-        ),
+        leading: Container(
+            margin: const EdgeInsets.fromLTRB(20.0, 0, 0, 8.0),
+            child: Image.network(
+              "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
+              fit: BoxFit.fitWidth,
+              alignment: Alignment.center,
+            )),
         title: const Text("Bash Forex"),
         actions: const [Icon(Icons.search, color: Colors.black54)],
       ),
-      body: ListView.builder(
-          itemCount: stock.length,
-          itemBuilder: (context, index) {
-            return stockPreferredTileData(context, stock, index);
-          }),
+      body: ListView.separated(
+        itemCount: stock.length,
+        itemBuilder: (context, index) {
+          return stockPreferredTileData(context, stock, index);
+        },
+        separatorBuilder: (context, index) {
+          return const Divider();
+        },
+      ),
     );
   }
 
@@ -28,8 +36,15 @@ class Forex extends StatelessWidget {
       BuildContext context, List<Stock> stock, int index) {
     return ListTile(
       leading: handleStockImageData(stock[index]),
-      title: Text(stock[index].stockName),
-      subtitle: Text("current stock price: ${stock[index].stockPrice}"),
+      trailing: const Icon(Icons.more_vert),
+      title: Text(
+        stock[index].stockName,
+        style: Style.normalText,
+      ),
+      subtitle: Text(
+        "current stock price: ${stock[index].stockPrice}",
+        style: Style.normalText,
+      ),
       onTap: () => {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ForexDetail(stock[index])))
@@ -38,11 +53,12 @@ class Forex extends StatelessWidget {
   }
 
   Widget handleStockImageData(Stock stock) {
-    return Container(
-      constraints: const BoxConstraints.tightFor(width: 150.0),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(10.0),
       child: Image.network(
         stock.assetIcon,
-        fit: BoxFit.fitWidth,
+        height: 150.0,
+        width: 100.0,
       ),
     );
   }

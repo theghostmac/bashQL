@@ -1,8 +1,6 @@
-import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:forexql/models/stock.dart';
-import 'package:forexql/models/stock_data.dart';
-import 'package:syncfusion_flutter_charts/charts.dart';
+import 'package:forexql/styles/styles.dart';
 
 class ForexDetail extends StatelessWidget {
   final Stock stock;
@@ -18,39 +16,57 @@ class ForexDetail extends StatelessWidget {
             children: [
               Column(
                   mainAxisAlignment: MainAxisAlignment.center,
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: stockDetail(stock, 0))
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: stockDetail(stock))
             ],
           ),
         ));
   }
 
-  List<Widget> stockDetail(Stock stock, int index) {
+  List<Widget> stockDetail(Stock stock) {
     return [
-      Image.network(
-        stock.assetIcon,
-        fit: BoxFit.fitWidth,
-      ),
-      Text(
-        stock.stockName,
-        textAlign: TextAlign.left,
-        style: const TextStyle(
-            fontSize: 32,
-            fontWeight: FontWeight.bold,
-            color: Colors.deepPurple),
-      ),
-      stockDescription(stock.strategies, index),
-      Text(
-        "${stock.stockStartingDayPrice}",
-        textAlign: TextAlign.left,
-      ),
+      stockBannerImage(stock.assetIcon, 1000.0, 170.0),
+      stockAssetName(stock),
+      Column(children: stockDescription(stock)),
     ];
   }
 
-  Widget stockDescription(List<StockData> stockdata, int index) {
+  Widget stockExtraInfo(Stock stock) {
     return Text(
-      stockdata[index].description,
+      "${stock.stockStartingDayPrice}",
       textAlign: TextAlign.left,
     );
+  }
+
+  Widget stockAssetName(Stock stock) {
+    return Container(
+        padding: const EdgeInsets.fromLTRB(25.0, 20.0, 25.0, 15.0),
+        child: Text(
+          stock.stockName,
+          style: Style.headerLarge,
+        ));
+  }
+
+  Widget stockBannerImage(String url, double width, double height) {
+    return Container(
+        constraints: BoxConstraints.tightFor(width: width, height: height),
+        child: Image.network(
+          url,
+          fit: BoxFit.fitWidth,
+        ));
+  }
+
+  List<Widget> stockDescription(Stock stock) {
+    List<Widget> result = [];
+    for (var i = 0; i < stock.strategies.length; i++) {
+      result.add(Container(
+          padding: const EdgeInsets.all(20.0),
+          child: Text(
+            stock.strategies[i].description,
+            textAlign: TextAlign.left,
+            style: Style.normalText,
+          )));
+    }
+    return result;
   }
 }
