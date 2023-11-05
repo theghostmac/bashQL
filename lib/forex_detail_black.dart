@@ -7,13 +7,14 @@ import 'package:forexql/models/stock.dart';
 import 'package:forexql/styles/styles.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class ForexDetail extends StatelessWidget {
+class ForexDetailBlack extends StatelessWidget {
   final Stock stock;
-  const ForexDetail(this.stock, {super.key});
+  const ForexDetailBlack(this.stock, {super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("${stock.stockName.capitalize()} Stocks")),
+        appBar: AppBar(title: Text("${stock.stockName.capitalize()} Stock")),
+        backgroundColor: Colors.black,
         body: SingleChildScrollView(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.start,
@@ -38,7 +39,9 @@ class ForexDetail extends StatelessWidget {
             children: [
               Text("€176.65",
                   style: GoogleFonts.alegreya(
-                      fontSize: 45.0, fontWeight: FontWeight.bold)),
+                      fontSize: 45.0,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white)),
             ],
           ),
           Row(
@@ -47,14 +50,14 @@ class ForexDetail extends StatelessWidget {
             children: [
               Text(
                 "-0.92 (-0.52%)",
-                style: GoogleFonts.lato(color: Colors.red),
+                style: GoogleFonts.lato(color: Colors.amber),
               ),
               const Icon(
                 Icons.arrow_downward_rounded,
                 size: 10.0,
-                color: Colors.red,
+                color: Colors.amber,
               ),
-              Text("today", style: GoogleFonts.lato(color: Colors.red))
+              Text("today", style: GoogleFonts.lato(color: Colors.amber))
             ],
           ),
           Row(
@@ -63,10 +66,10 @@ class ForexDetail extends StatelessWidget {
             children: [
               Text(
                 "Closed: 3 Nov, 19:59 GMT-4",
-                style: GoogleFonts.lato(color: Colors.grey, fontSize: 10.0),
+                style: GoogleFonts.lato(color: Colors.white, fontSize: 10.0),
               ),
               Text("  • Disclaimer",
-                  style: GoogleFonts.lato(color: Colors.grey, fontSize: 10.0))
+                  style: GoogleFonts.lato(color: Colors.white, fontSize: 10.0))
             ],
           ),
         ]),
@@ -80,7 +83,10 @@ class ForexDetail extends StatelessWidget {
           stock.stockName.capitalize(),
           style: Style.headerLarge,
         ),
-        subtitle: Text("NASDAQ:${stock.stockName.capitalize()}"),
+        subtitle: Text(
+          "NASDAQ:${stock.stockName.capitalize()}",
+          style: const TextStyle(color: Colors.white),
+        ),
         trailing: ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
@@ -91,7 +97,7 @@ class ForexDetail extends StatelessWidget {
                     RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
                         side: const BorderSide(color: Colors.amber)))),
-            child: const Icon(Icons.show_chart_outlined)),
+            child: const Icon(Icons.show_chart_sharp)),
       ),
       Column(children: stockDescription(stock)),
       Row(
@@ -158,7 +164,7 @@ class ForexDetail extends StatelessWidget {
           child: Text(
             stock.strategies[i].description,
             textAlign: TextAlign.justify,
-            style: GoogleFonts.alegreya(),
+            style: GoogleFonts.alegreya(color: Colors.grey),
           )));
     }
     return result;
@@ -192,10 +198,10 @@ class ForexDetail extends StatelessWidget {
               ],
               isCurved: true,
               barWidth: 2,
-              color: Colors.teal.withOpacity(0.5),
+              color: Colors.white,
               belowBarData: BarAreaData(
                 show: true,
-                color: Colors.tealAccent.withOpacity(0.1),
+                color: Colors.tealAccent.withOpacity(0.4),
                 cutOffY: cutOffYValue,
                 applyCutOffY: true,
               ),

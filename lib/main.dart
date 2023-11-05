@@ -6,6 +6,7 @@ void main() {
   final mockStock = MockStock.fetchAllStocks();
   runApp(MaterialApp(
       theme: ThemeData(
-          primarySwatch: Colors.deepPurple, primaryColor: Colors.deepPurple),
+          primarySwatch: Colors.teal,
+          primaryColor: Colors.tealAccent.withOpacity(0.1)),
       home: Forex(mockStock)));
 }
