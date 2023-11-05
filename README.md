@@ -1,3 +1,4 @@
 # forexql
 
-- charts : flutter pub add syncfusion_flutter_charts
+Docs coming after version one fix.
+<img src="https://github.com/jim-nnamdi/bashQL/blob/main/assets/images/ss.png" alt="screenshot">
