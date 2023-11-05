@@ -39,6 +39,7 @@ dependencies:
   http: ^1.1.0
   fl_chart: ^0.61.0
   syncfusion_flutter_charts: ^23.1.43
+  google_fonts: ^6.1.0
 
 dev_dependencies:
   test: ^1.5.1
@@ -64,6 +65,8 @@ flutter:
   # included with your application, so that you can use the icons in
   # the material Icons class.
   uses-material-design: true
+  assets:
+    - assets/images/
 
   # To add assets to your application, add an assets section, like this:
   # assets:

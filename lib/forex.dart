@@ -1,6 +1,8 @@
 import "package:flutter/material.dart";
+import "package:forexql/ext.dart";
 import "package:forexql/forex_detail.dart";
 import "package:forexql/styles/styles.dart";
+import "package:google_fonts/google_fonts.dart";
 import "./models/stock.dart";
 
 class Forex extends StatelessWidget {
@@ -12,12 +14,12 @@ class Forex extends StatelessWidget {
       appBar: AppBar(
         leading: Container(
             margin: const EdgeInsets.fromLTRB(20.0, 0, 0, 8.0),
-            child: Image.network(
-              "https://cdn.prod.website-files.com/6257adef93867e50d84d30e2/636e0a6a49cf127bf92de1e2_icon_clyde_blurple_RGB.png",
+            child: Image.asset(
+              "assets/images/tbl.png",
               fit: BoxFit.fitWidth,
               alignment: Alignment.center,
             )),
-        title: const Text("Bash Forex"),
+        title: const Text("Bool Forex"),
         actions: const [Icon(Icons.search, color: Colors.black54)],
       ),
       body: ListView.separated(
@@ -32,18 +34,122 @@ class Forex extends StatelessWidget {
     );
   }
 
+  Widget stockCard() {
+    return Card(
+        elevation: 20,
+        shape:
+            RoundedRectangleBorder(borderRadius: BorderRadius.circular(20.0)),
+        margin: const EdgeInsets.fromLTRB(9.0, 15.0, 9.0, 9.0),
+        child: Container(
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              gradient: const LinearGradient(
+                begin: Alignment.topRight,
+                end: Alignment.bottomLeft,
+                colors: [
+                  Color.fromARGB(255, 239, 186, 166),
+                  Color.fromARGB(255, 224, 219, 219),
+                ],
+              )),
+          child: SizedBox(
+              width: 300,
+              height: 500,
+              child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Column(
+                    children: [
+                      // header for card
+                      Row(
+                        children: [
+                          const CircleAvatar(
+                            backgroundImage: AssetImage("/images/xaomi.png"),
+                            backgroundColor: Colors.transparent,
+                            radius: 25,
+                          ),
+                          Row(
+                            children: [
+                              Column(children: [
+                                Container(
+                                    padding: const EdgeInsets.all(6.0),
+                                    child: Column(children: [
+                                      Text(
+                                        "Xiaomi",
+                                        style: GoogleFonts.redHatDisplay(
+                                            fontSize: 15.0,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      const Text(
+                                        "XMO",
+                                        style: Style.normalText,
+                                      )
+                                    ]))
+                              ])
+                            ],
+                          )
+                        ],
+                      ),
+                      // money section
+                      Column(
+                        children: [
+                          Container(
+                              padding: const EdgeInsets.fromLTRB(
+                                  0.0, 10.0, 10.0, 10.0),
+                              child: Column(children: [
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      Text(
+                                        "£1,045,983",
+                                        style: GoogleFonts.lato(
+                                            fontStyle: FontStyle.normal,
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.bold),
+                                      )
+                                    ]),
+                                Row(
+                                    mainAxisAlignment:
+                                        MainAxisAlignment.spaceEvenly,
+                                    children: [
+                                      const Icon(
+                                        Icons.arrow_drop_down_circle_rounded,
+                                        size: 15.0,
+                                        color: Colors.green,
+                                      ),
+                                      Text(
+                                        "£1.12",
+                                        style: GoogleFonts.lato(
+                                            fontWeight: FontWeight.normal),
+                                      ),
+                                      const Icon(
+                                        Icons.show_chart_rounded,
+                                        color: Colors.green,
+                                      )
+                                    ])
+                              ])),
+                        ],
+                      )
+                    ],
+                  ))),
+        ));
+  }
+
   Widget stockPreferredTileData(
       BuildContext context, List<Stock> stock, int index) {
     return ListTile(
-      leading: handleStockImageData(stock[index]),
-      trailing: const Icon(Icons.more_vert),
+      leading: handleStockImageData(stock[index].assetIcon),
+      trailing: const Icon(
+        Icons.bar_chart_rounded,
+        color: Colors.deepPurple,
+      ),
       title: Text(
-        stock[index].stockName,
-        style: Style.normalText,
+        stock[index].stockName.capitalize(),
+        style: GoogleFonts.robotoMono(fontWeight: FontWeight.bold),
       ),
       subtitle: Text(
-        "current stock price: ${stock[index].stockPrice}",
-        style: Style.normalText,
+        "current stock price: £${stock[index].stockPrice}",
+        style:
+            GoogleFonts.jost(color: Colors.green, fontWeight: FontWeight.bold),
       ),
       onTap: () => {
         Navigator.push(context,
@@ -52,14 +158,11 @@ class Forex extends StatelessWidget {
     );
   }
 
-  Widget handleStockImageData(Stock stock) {
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(10.0),
-      child: Image.network(
-        stock.assetIcon,
-        height: 150.0,
-        width: 100.0,
-      ),
+  Widget handleStockImageData(String url) {
+    return Image.asset(
+      url,
+      height: 150.0,
+      width: 100.0,
     );
   }
 

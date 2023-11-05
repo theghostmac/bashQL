@@ -4,5 +4,8 @@ import "forex.dart";
 
 void main() {
   final mockStock = MockStock.fetchAllStocks();
-  runApp(MaterialApp(home: Forex(mockStock)));
+  runApp(MaterialApp(
+      theme: ThemeData(
+          primarySwatch: Colors.deepPurple, primaryColor: Colors.deepPurple),
+      home: Forex(mockStock)));
 }

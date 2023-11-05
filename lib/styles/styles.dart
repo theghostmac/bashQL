@@ -14,4 +14,16 @@ class Style {
     fontFamily: _forexqlFont,
     color: Colors.grey,
   );
+
+  static const frontPageStyle = TextStyle(
+      fontFamily: _forexqlFont,
+      fontSize: 15.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black);
+
+  static const moneyStyle = TextStyle(
+      // fontFamily: _forexqlFont,
+      fontSize: 20.0,
+      fontWeight: FontWeight.bold,
+      color: Colors.black);
 }
