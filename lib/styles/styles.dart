@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Style {
-  static const _textSizeLarge = 25.0;
+  static const _textSizeLarge = 35.0;
   static const String _forexqlFont = "U8";
 
-  static const headerLarge = TextStyle(
-      fontFamily: _forexqlFont,
+  static final headerLarge = GoogleFonts.alegreya(
       fontSize: _textSizeLarge,
       color: Colors.black,
       fontWeight: FontWeight.bold);
