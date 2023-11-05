@@ -31,7 +31,7 @@ class ForexDetail extends StatelessWidget {
   List<Widget> stockDetail(Stock stock) {
     return [
       Container(
-        margin: const EdgeInsets.fromLTRB(15.0, 30.0, 15.0, 30.0),
+        margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 30.0),
         child: Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,7 +73,30 @@ class ForexDetail extends StatelessWidget {
       ),
       stockDataChart(stock),
       // stockBannerImage(stock.assetIcon, 1000.0, 170.0),
-      stockAssetName(stock),
+      // stockAssetName(stock),
+      ListTile(
+        leading: Image.asset(stock.assetIcon),
+        title: Text(
+          stock.stockName.capitalize(),
+          style: Style.headerLarge,
+        ),
+        subtitle: Text("NASDAQ:${stock.stockName.capitalize()}"),
+        trailing: ElevatedButton(
+          onPressed: () {},
+          style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  const EdgeInsets.all(20.0)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      side: const BorderSide(color: Colors.amber)))),
+          child: Text(
+            "overview",
+            style: GoogleFonts.alegreya(color: Colors.black, fontSize: 15.0),
+          ),
+        ),
+      ),
       Column(children: stockDescription(stock)),
     ];
   }
@@ -110,8 +133,8 @@ class ForexDetail extends StatelessWidget {
           padding: const EdgeInsets.all(20.0),
           child: Text(
             stock.strategies[i].description,
-            textAlign: TextAlign.left,
-            style: Style.normalText,
+            textAlign: TextAlign.justify,
+            style: GoogleFonts.alegreya(),
           )));
     }
     return result;
