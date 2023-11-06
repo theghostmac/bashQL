@@ -37,6 +37,9 @@ migrate_working_dir/
 /assets/
 /web/
 /android/
+analysis_options.yaml
+.metadata
+pubspec.lock
 
 
 # Symbolication related
