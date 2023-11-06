@@ -38,7 +38,7 @@ class ForexDetail extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("€176.65",
+              Text("€${stock.stockPrice}",
                   style: GoogleFonts.alegreya(
                       fontSize: 45.0, fontWeight: FontWeight.bold)),
             ],
@@ -103,7 +103,7 @@ class ForexDetail extends StatelessWidget {
           ElevatedButton(
               onPressed: () => {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Buy()))
+                        MaterialPageRoute(builder: (context) => Buy(stock)))
                   },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -117,7 +117,7 @@ class ForexDetail extends StatelessWidget {
           ElevatedButton(
               onPressed: () => {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Sell()))
+                        MaterialPageRoute(builder: (context) => Sell(stock)))
                   },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
