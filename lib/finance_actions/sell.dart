@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
+import "package:forexql/models/stock.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class Sell extends StatelessWidget {
-  const Sell({super.key});
+  final Stock stock;
+  const Sell(this.stock, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -11,17 +13,17 @@ class Sell extends StatelessWidget {
         title: const Text("Sell stock"),
         actions: const [Icon(Icons.search)],
       ),
-      body: SingleChildScrollView(child: sellStockInfo()),
+      body: SingleChildScrollView(child: sellStockInfo(stock)),
     );
   }
 
   /// text field with stock name to purchase and another for price
-  Widget sellStockInfo() {
+  Widget sellStockInfo(Stock stock) {
     return Column(
       children: [
         ListTile(
           minVerticalPadding: 10.0,
-          title: Text("€549.65",
+          title: Text("€${stock.stockStartingDayPrice}",
               style: GoogleFonts.alegreya(
                   fontSize: 45.0, fontWeight: FontWeight.bold)),
           trailing: const CircleAvatar(
@@ -66,7 +68,7 @@ class Sell extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                   border: const OutlineInputBorder(),
-                  labelText: "Stock to sell",
+                  labelText: stock.stockName,
                   helperStyle:
                       GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
                   contentPadding: const EdgeInsets.all(30.0)),
@@ -91,13 +93,13 @@ class Sell extends StatelessWidget {
                       GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
                   contentPadding: const EdgeInsets.all(30.0)),
             )),
-        sellStockInfoButton(),
+        sellStockInfoButton(stock),
       ],
     );
   }
 
   /// Button to submit the stock purchase
-  Widget sellStockInfoButton() {
+  Widget sellStockInfoButton(Stock stock) {
     return ElevatedButton(
         onPressed: () {},
         style: ButtonStyle(
@@ -107,7 +109,7 @@ class Sell extends StatelessWidget {
               const TextStyle(fontSize: 20.0)),
         ),
         child: Text(
-          "Sell stock",
+          "Sell ${stock.stockName} stock",
           style: GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
         ));
   }

@@ -103,7 +103,7 @@ class ForexDetail extends StatelessWidget {
           ElevatedButton(
               onPressed: () => {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Buy()))
+                        MaterialPageRoute(builder: (context) => Buy(stock)))
                   },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
@@ -117,7 +117,7 @@ class ForexDetail extends StatelessWidget {
           ElevatedButton(
               onPressed: () => {
                     Navigator.push(context,
-                        MaterialPageRoute(builder: (context) => const Sell()))
+                        MaterialPageRoute(builder: (context) => Sell(stock)))
                   },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(

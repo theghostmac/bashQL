@@ -1,8 +1,10 @@
 import "package:flutter/material.dart";
+import "package:forexql/models/stock.dart";
 import "package:google_fonts/google_fonts.dart";
 
 class Buy extends StatelessWidget {
-  const Buy({super.key});
+  final Stock stock;
+  const Buy(this.stock, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,17 +14,17 @@ class Buy extends StatelessWidget {
         actions: const [Icon(Icons.search)],
       ),
       body: SingleChildScrollView(
-        child: buyStockInfo(),
+        child: buyStockInfo(stock),
       ),
     );
   }
 
-  Widget buyStockInfo() {
+  Widget buyStockInfo(Stock stock) {
     return Column(
       children: [
         ListTile(
           minVerticalPadding: 10.0,
-          title: Text("€549.65",
+          title: Text("€${stock.stockStartingDayPrice}",
               style: GoogleFonts.alegreya(
                   fontSize: 45.0, fontWeight: FontWeight.bold)),
           trailing: const CircleAvatar(
@@ -67,7 +69,7 @@ class Buy extends StatelessWidget {
             child: TextFormField(
               decoration: InputDecoration(
                   border: const OutlineInputBorder(),
-                  labelText: "Stock to buy",
+                  labelText: stock.stockName,
                   helperStyle:
                       GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
                   contentPadding: const EdgeInsets.all(30.0)),
@@ -92,12 +94,12 @@ class Buy extends StatelessWidget {
                       GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
                   contentPadding: const EdgeInsets.all(30.0)),
             )),
-        buyStockInfoButton(),
+        buyStockInfoButton(stock),
       ],
     );
   }
 
-  Widget buyStockInfoButton() {
+  Widget buyStockInfoButton(Stock stock) {
     return ElevatedButton(
         onPressed: () {},
         style: ButtonStyle(
@@ -107,7 +109,7 @@ class Buy extends StatelessWidget {
               const TextStyle(fontSize: 20.0)),
         ),
         child: Text(
-          "Buy stock",
+          "Buy ${stock.stockName} stock",
           style: GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
         ));
   }
