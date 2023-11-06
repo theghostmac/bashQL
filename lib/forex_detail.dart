@@ -38,7 +38,7 @@ class ForexDetail extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text("€176.65",
+              Text("€${stock.stockPrice}",
                   style: GoogleFonts.alegreya(
                       fontSize: 45.0, fontWeight: FontWeight.bold)),
             ],
