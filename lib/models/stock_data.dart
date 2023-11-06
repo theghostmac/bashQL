@@ -31,4 +31,16 @@ class StockData {
     }
     return stockdata;
   }
+
+  static Future<StockData> fetchSingleStockDataInformation(
+      int stockDataId) async {
+    var url = Endpoint.uri("/stockdata/$stockDataId");
+    var resp = await http.get(url.toString() as Uri);
+    if (resp.statusCode != HttpStatus.ok) {
+      throw ("error fetching stock data info");
+    }
+    var dataResponse = json.decode(resp.body);
+    var result = StockData.fromJson(dataResponse);
+    return result;
+  }
 }

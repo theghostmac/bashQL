@@ -5,6 +5,7 @@ import "forex.dart";
 void main() {
   final mockStock = MockStock.fetchAllStocks();
   runApp(MaterialApp(
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
           primarySwatch: Colors.teal,
           primaryColor: Colors.tealAccent.withOpacity(0.1)),
