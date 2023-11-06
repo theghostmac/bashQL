@@ -3,6 +3,8 @@ import 'dart:ui';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:forexql/ext.dart';
+import 'package:forexql/finance_actions/buy.dart';
+import 'package:forexql/finance_actions/sell.dart';
 import 'package:forexql/models/stock.dart';
 import 'package:forexql/styles/styles.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -22,13 +24,13 @@ class ForexDetail extends StatelessWidget {
               Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: stockDetail(stock))
+                  children: stockDetail(context, stock))
             ],
           ),
         ));
   }
 
-  List<Widget> stockDetail(Stock stock) {
+  List<Widget> stockDetail(BuildContext context, Stock stock) {
     return [
       Container(
         margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 30.0),
@@ -99,7 +101,10 @@ class ForexDetail extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Buy()))
+                  },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                     const EdgeInsets.all(20.0)),
@@ -110,7 +115,10 @@ class ForexDetail extends StatelessWidget {
                     GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
               )),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () => {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => const Sell()))
+                  },
               style: ButtonStyle(
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                     const EdgeInsets.all(20.0)),
@@ -210,7 +218,8 @@ class ForexDetail extends StatelessWidget {
               ),
             ),
           ],
-          borderData: FlBorderData(border: const Border(bottom: BorderSide())),
+          borderData:
+              FlBorderData(border: const Border(bottom: BorderSide.none)),
           minY: 0,
           titlesData: FlTitlesData(
             bottomTitles: AxisTitles(
