@@ -64,26 +64,32 @@ class Sell extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "Stock to sell",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "amount to sell",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "secret selling code",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         sellStockInfoButton(),
       ],
@@ -100,8 +106,9 @@ class Sell extends StatelessWidget {
           textStyle: MaterialStateProperty.all<TextStyle>(
               const TextStyle(fontSize: 20.0)),
         ),
-        child: const Text(
+        child: Text(
           "Sell stock",
+          style: GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
         ));
   }
 }

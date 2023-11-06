@@ -65,26 +65,32 @@ class Buy extends StatelessWidget {
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "Stock to buy",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "amount to buy",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         Padding(
             padding: const EdgeInsets.all(15.0),
             child: TextFormField(
-              decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
+              decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
                   labelText: "secret purchase code",
-                  contentPadding: EdgeInsets.all(30.0)),
+                  helperStyle:
+                      GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+                  contentPadding: const EdgeInsets.all(30.0)),
             )),
         buyStockInfoButton(),
       ],
@@ -100,6 +106,9 @@ class Buy extends StatelessWidget {
           textStyle: MaterialStateProperty.all<TextStyle>(
               const TextStyle(fontSize: 20.0)),
         ),
-        child: const Text("Buy stock"));
+        child: Text(
+          "Buy stock",
+          style: GoogleFonts.alegreya(color: Colors.white, fontSize: 20.0),
+        ));
   }
 }
