@@ -14,12 +14,10 @@ class Forex extends StatelessWidget {
         appBar: AppBar(
           leading: Container(
               margin: const EdgeInsets.fromLTRB(20.0, 0, 0, 8.0),
-              child: Image.asset(
-                "assets/images/tbl.png",
-                fit: BoxFit.fitWidth,
-                alignment: Alignment.center,
-              )),
-          title: const Text("Bool Forex"),
+              child: const CircleAvatar(
+                  backgroundImage:
+                      AssetImage("assets/images/userheader.jpeg"))),
+          title: const Text("BoolQL Trading"),
           actions: const [Icon(Icons.search, color: Colors.black54)],
         ),
         body: SingleChildScrollView(
@@ -35,7 +33,7 @@ class Forex extends StatelessWidget {
                           style: GoogleFonts.alegreya(
                               fontSize: 45.0, fontWeight: FontWeight.bold)),
                       trailing: ElevatedButton.icon(
-                          icon: const Icon(Icons.wallet_rounded),
+                          icon: const Icon(Icons.arrow_drop_down),
                           onPressed: () {},
                           style: ButtonStyle(
                             padding:
@@ -84,6 +82,9 @@ class Forex extends StatelessWidget {
                       ),
                     ),
                   ]),
+            ),
+            const Divider(
+              color: Color.fromARGB(255, 201, 201, 201),
             ),
             ListView.separated(
               itemCount: stock.length,
