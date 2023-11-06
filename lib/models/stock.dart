@@ -50,4 +50,12 @@ class Stock {
     var result = Stock.fromJson(dataResponse);
     return result;
   }
+
+  static double stockPercentOfUserWallet(List<Stock> stock) {
+    double sum = 0.0;
+    for (var i = 0; i < stock.length; i++) {
+      sum += stock[i].stockPrice;
+    }
+    return sum;
+  }
 }

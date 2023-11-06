@@ -8,6 +8,7 @@ import "./models/stock.dart";
 class Forex extends StatelessWidget {
   final List<Stock> stock;
   const Forex(this.stock, {super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class Forex extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     ListTile(
-                      title: Text("€549.65",
+                      title: Text("€${userBal(stock)}",
                           style: GoogleFonts.alegreya(
                               fontSize: 45.0, fontWeight: FontWeight.bold)),
                       trailing: ElevatedButton.icon(
@@ -98,6 +99,11 @@ class Forex extends StatelessWidget {
             ),
           ],
         )));
+  }
+
+  double userBal(List<Stock> stock) {
+    double s = Stock.stockPercentOfUserWallet(stock);
+    return s;
   }
 
   Widget stockCard() {
