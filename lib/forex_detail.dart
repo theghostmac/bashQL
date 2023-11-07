@@ -12,9 +12,25 @@ import 'package:google_fonts/google_fonts.dart';
 class ForexDetail extends StatelessWidget {
   final Stock stock;
   const ForexDetail(this.stock, {super.key});
+  final int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        bottomNavigationBar: BottomNavigationBar(
+            backgroundColor: const Color.fromRGBO(139, 92, 246, 1.0),
+            unselectedItemColor: Colors.white,
+            selectedItemColor: Colors.white,
+            currentIndex: _selectedIndex,
+            type: BottomNavigationBarType.fixed,
+            items: const [
+              BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.account_circle_rounded), label: "Account"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.wallet_giftcard_rounded), label: "Balance"),
+              BottomNavigationBarItem(
+                  icon: Icon(Icons.widgets_rounded), label: "Menu"),
+            ]),
         appBar: AppBar(title: Text("${stock.stockName.capitalize()} Stocks")),
         body: SingleChildScrollView(
           child: Column(
@@ -86,13 +102,13 @@ class ForexDetail extends StatelessWidget {
         trailing: ElevatedButton(
             onPressed: () {},
             style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.amber),
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.red),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
                     const EdgeInsets.all(20.0)),
                 shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(18.0),
-                        side: const BorderSide(color: Colors.amber)))),
+                        side: const BorderSide(color: Colors.red)))),
             child: const Icon(Icons.show_chart_outlined)),
       ),
       Column(children: stockDescription(stock)),
@@ -203,13 +219,23 @@ class ForexDetail extends StatelessWidget {
               color: Colors.teal.withOpacity(0.5),
               belowBarData: BarAreaData(
                 show: true,
-                color: Colors.tealAccent.withOpacity(0.1),
+                color: const Color.fromRGBO(
+                  139,
+                  92,
+                  246,
+                  0.1,
+                ),
                 cutOffY: cutOffYValue,
                 applyCutOffY: true,
               ),
               aboveBarData: BarAreaData(
                 show: true,
-                color: Colors.lightGreen.withOpacity(0.5),
+                color: const Color.fromRGBO(
+                  139,
+                  92,
+                  246,
+                  0.1,
+                ),
                 cutOffY: cutOffYValue,
                 applyCutOffY: true,
               ),
