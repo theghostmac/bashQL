@@ -1,8 +1,8 @@
 # BoolQL
-BooQL is an opensource flutter app which incorporates minimal dynamic functionality for a trading app which spans across stocks • cryptocurrency and • foreign exchanges.
+BooQL is an open source Flutter app which incorporates minimal dynamic functionality for a trading app which spans across stocks • cryptocurrency and • foreign exchanges.
 
 # Installation
-First, install flutter first, then run the command below
+First, install Flutter first, then run the command below:
 
 ```
 flutter run
