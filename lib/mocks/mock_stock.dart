@@ -7,7 +7,7 @@ class MockStock {
       1,
       "apple",
       23.0,
-      10,
+      11,
       40,
       "assets/images/apple.png",
       [
@@ -67,7 +67,7 @@ class MockStock {
       6,
       "meta",
       75.0,
-      20,
+      21,
       28,
       "assets/images/meta.png",
       [

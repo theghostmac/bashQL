@@ -225,26 +225,26 @@ class Forex extends StatelessWidget {
       BuildContext context, List<Stock> stock, int index) {
     return ListTile(
       leading: handleStockImageData(stock[index].assetIcon),
-      trailing: const Icon(
-        Icons.more_vert_rounded,
-        color: Color.fromRGBO(139, 92, 246, 1.0),
-      ),
       title: Text(
         stock[index].stockName.capitalize(),
-        style:
-            GoogleFonts.alegreya(fontWeight: FontWeight.bold, fontSize: 20.0),
+        style: Style.frontPageStyle,
       ),
-      subtitle: Text(
-        "Selling price: €${stock[index].stockPrice}",
-        style: GoogleFonts.alegreya(
-            color: const Color.fromRGBO(
-              139,
-              92,
-              246,
-              1.0,
-            ),
-            fontSize: 18.0),
-      ),
+      subtitle: Text("NASDAQ:${stock[index].stockName.capitalize()}"),
+      trailing: ElevatedButton(
+          onPressed: () {},
+          style: ButtonStyle(
+              backgroundColor: stock[index].stockStartingDayPrice % 2 != 0
+                  ? MaterialStateProperty.all<Color>(Colors.red)
+                  : MaterialStateProperty.all<Color>(Colors.green),
+              padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                  const EdgeInsets.all(20.0)),
+              shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                  RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(18.0),
+                      side: stock[index].stockStartingDayPrice % 2 != 0
+                          ? const BorderSide(color: Colors.red)
+                          : const BorderSide(color: Colors.green)))),
+          child: const Icon(Icons.show_chart_outlined)),
       onTap: () => {
         Navigator.push(context,
             MaterialPageRoute(builder: (context) => ForexDetail(stock[index])))
@@ -255,8 +255,8 @@ class Forex extends StatelessWidget {
   Widget handleStockImageData(String url) {
     return Image.asset(
       url,
-      height: 150.0,
       width: 100.0,
+      height: 30.0,
     );
   }
 
