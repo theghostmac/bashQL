@@ -12,7 +12,7 @@ class MockStock {
       "assets/images/apple.png",
       [
         StockData(23, 14000, "jim",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
     Stock(
@@ -24,7 +24,7 @@ class MockStock {
       "assets/images/google.png",
       [
         StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
     Stock(
@@ -36,33 +36,33 @@ class MockStock {
       "assets/images/microsoft.png",
       [
         StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
-    Stock(
-      4,
-      "nvidia",
-      55.0,
-      16,
-      38,
-      "assets/images/nvidia.png",
-      [
-        StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
-      ],
-    ),
-    Stock(
-      5,
-      "snapchat",
-      65.0,
-      18,
-      48,
-      "assets/images/snapchat.png",
-      [
-        StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
-      ],
-    ),
+    // Stock(
+    //   4,
+    //   "nvidia",
+    //   55.0,
+    //   16,
+    //   38,
+    //   "assets/images/nvidia.png",
+    //   [
+    //     StockData(12, 21000, "tutu",
+    //         "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
+    //   ],
+    // ),
+    // Stock(
+    //   5,
+    //   "snapchat",
+    //   65.0,
+    //   18,
+    //   48,
+    //   "assets/images/snapchat.png",
+    //   [
+    //     StockData(12, 21000, "tutu",
+    //         "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
+    //   ],
+    // ),
     Stock(
       6,
       "meta",
@@ -72,7 +72,7 @@ class MockStock {
       "assets/images/meta.png",
       [
         StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
     Stock(
@@ -84,7 +84,7 @@ class MockStock {
       "assets/images/tesla.webp",
       [
         StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
     Stock(
@@ -96,7 +96,7 @@ class MockStock {
       "assets/images/cnbc.png",
       [
         StockData(12, 21000, "tutu",
-            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue.")
+            "Apple Inc. is an American multinational technology company headquartered in Cupertino, California. As of March 2023, Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue. Apple is the world's biggest company by market capitalization, and with US394.3 billion the largest technology company by 2022 revenue")
       ],
     ),
   ];

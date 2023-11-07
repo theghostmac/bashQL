@@ -8,97 +8,112 @@ import "./models/stock.dart";
 class Forex extends StatelessWidget {
   final List<Stock> stock;
   const Forex(this.stock, {super.key});
-
+  final int _selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          leading: Container(
-              margin: const EdgeInsets.fromLTRB(20.0, 0, 0, 8.0),
-              child: const CircleAvatar(
-                  backgroundImage:
-                      AssetImage("assets/images/userheader.jpeg"))),
-          title: const Text("BoolQL Trading"),
-          actions: const [Icon(Icons.search, color: Colors.black54)],
-        ),
-        body: SingleChildScrollView(
-            child: Column(
-          children: [
-            Container(
-              margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 30.0),
-              child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    ListTile(
-                      title: Text("€${userBal(stock)}",
-                          style: GoogleFonts.alegreya(
-                              fontSize: 45.0, fontWeight: FontWeight.bold)),
-                      trailing: ElevatedButton.icon(
-                          icon: const Icon(Icons.arrow_drop_down),
-                          onPressed: () {},
-                          style: ButtonStyle(
-                            padding:
-                                MaterialStateProperty.all<EdgeInsetsGeometry>(
-                                    const EdgeInsets.all(20.0)),
-                          ),
-                          label: Text(
-                            "Withdraw",
-                            style: GoogleFonts.alegreya(
-                                color: Colors.white, fontSize: 16.0),
-                          )),
-                      subtitle: Column(
-                        children: [
-                          Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "+1.92 (+3.29%)",
-                                style: GoogleFonts.lato(color: Colors.green),
-                              ),
-                              const Icon(
-                                Icons.arrow_upward_rounded,
-                                size: 10.0,
-                                color: Colors.green,
-                              ),
-                              Text("today",
-                                  style: GoogleFonts.lato(color: Colors.green))
-                            ],
-                          ),
-                          Row(
-                            // mainAxisAlignment: MainAxisAlignment.spaceAround,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text(
-                                "Closed: 3 Nov, 19:59 GMT-4",
-                                style: GoogleFonts.lato(
-                                    color: Colors.grey, fontSize: 10.0),
-                              ),
-                              Text("  • Disclaimer",
-                                  style: GoogleFonts.lato(
-                                      color: Colors.grey, fontSize: 10.0))
-                            ],
-                          ),
-                        ],
-                      ),
+      appBar: AppBar(
+        leading: Container(
+            margin: const EdgeInsets.fromLTRB(20.0, 0, 0, 8.0),
+            child: const CircleAvatar(
+                backgroundImage: AssetImage("assets/images/userheader.jpeg"))),
+        title: const Text("BoolQL Trading"),
+        actions: const [Icon(Icons.search, color: Colors.black54)],
+      ),
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          Container(
+            margin: const EdgeInsets.fromLTRB(15.0, 20.0, 15.0, 30.0),
+            child:
+                Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
+              ListTile(
+                title: Text("€${userBal(stock)}",
+                    style: GoogleFonts.alegreya(
+                        fontSize: 45.0, fontWeight: FontWeight.bold)),
+                trailing: ElevatedButton.icon(
+                    icon: const Icon(Icons.arrow_drop_down),
+                    onPressed: () {},
+                    style: ButtonStyle(
+                      padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                          const EdgeInsets.all(20.0)),
                     ),
-                  ]),
-            ),
-            const Divider(
-              color: Color.fromARGB(255, 201, 201, 201),
-            ),
-            ListView.separated(
-              itemCount: stock.length,
-              shrinkWrap: true,
-              itemBuilder: (context, index) {
-                return stockPreferredTileData(context, stock, index);
-              },
-              separatorBuilder: (context, index) {
-                return const Divider();
-              },
-            ),
-          ],
-        )));
+                    label: Text(
+                      "Withdraw",
+                      style: GoogleFonts.roboto(
+                          color: Colors.white,
+                          fontSize: 16.0,
+                          fontWeight: FontWeight.bold),
+                    )),
+                subtitle: Column(
+                  children: [
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "+1.92 (+3.29%)",
+                          style: GoogleFonts.lato(color: Colors.green),
+                        ),
+                        const Icon(
+                          Icons.arrow_upward_rounded,
+                          size: 10.0,
+                          color: Colors.green,
+                        ),
+                        Text("today",
+                            style: GoogleFonts.lato(color: Colors.green))
+                      ],
+                    ),
+                    Row(
+                      // mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text(
+                          "Closed: 3 Nov, 19:59 GMT-4",
+                          style: GoogleFonts.lato(
+                              color: Colors.grey, fontSize: 10.0),
+                        ),
+                        Text("  • Disclaimer",
+                            style: GoogleFonts.lato(
+                                color: Colors.grey, fontSize: 10.0))
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ]),
+          ),
+          const Divider(
+            color: Color.fromARGB(255, 201, 201, 201),
+          ),
+          ListView.separated(
+            itemCount: stock.length,
+            shrinkWrap: true,
+            itemBuilder: (context, index) {
+              return stockPreferredTileData(context, stock, index);
+            },
+            separatorBuilder: (context, index) {
+              return const Divider();
+            },
+          ),
+        ],
+      )),
+      bottomNavigationBar: BottomNavigationBar(
+          backgroundColor: const Color.fromRGBO(139, 92, 246, 1.0),
+          unselectedItemColor: Colors.white,
+          selectedItemColor: Colors.white,
+          currentIndex: _selectedIndex,
+          type: BottomNavigationBarType.fixed,
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.account_circle_rounded), label: "Account"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.wallet_giftcard_rounded), label: "Balance"),
+            BottomNavigationBarItem(
+                icon: Icon(Icons.widgets_rounded), label: "Menu"),
+          ]),
+    );
   }
 
   double userBal(List<Stock> stock) {
@@ -212,7 +227,7 @@ class Forex extends StatelessWidget {
       leading: handleStockImageData(stock[index].assetIcon),
       trailing: const Icon(
         Icons.more_vert_rounded,
-        color: Colors.teal,
+        color: Color.fromRGBO(139, 92, 246, 1.0),
       ),
       title: Text(
         stock[index].stockName.capitalize(),
@@ -221,7 +236,14 @@ class Forex extends StatelessWidget {
       ),
       subtitle: Text(
         "Selling price: €${stock[index].stockPrice}",
-        style: GoogleFonts.alegreya(color: Colors.green),
+        style: GoogleFonts.alegreya(
+            color: const Color.fromRGBO(
+              139,
+              92,
+              246,
+              1.0,
+            ),
+            fontSize: 18.0),
       ),
       onTap: () => {
         Navigator.push(context,
